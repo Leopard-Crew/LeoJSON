@@ -1,5 +1,7 @@
 # LeoJSON
 
-A high performance JSON Library, written in Objective-C. 
+LeoJSON is a Leopard/PowerPC JSON brick based on JSONKit.
 
-**For Mac OS X 10.5 / Leopard / PowerPC.**
+JSONKit historically described itself as a very high performance Objective-C JSON
+library. LeoJSON re-validates that claim on real Mac OS X 10.5.8 PowerPC
+hardware before treating performance as a project guarantee.
