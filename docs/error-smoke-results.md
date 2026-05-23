@@ -22,6 +22,13 @@ on success.
 - write failure with NULL error pointer
 - successful parse clears the previous error string
 
+## Hardening note
+
+The first error-smoke attempt exposed an uncaught JSONKit exception for empty
+input data. LeoJSON now guards empty input data before calling JSONKit and wraps
+JSONKit parse/serialization calls so implementation exceptions do not escape the
+public LeoJSON boundary.
+
 ## Interpretation
 
 This confirms that LeoJSON's minimal public API has predictable failure behavior
