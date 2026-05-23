@@ -150,3 +150,18 @@ dist-smoke-gcc42: release-gcc42
 		-I$(RELEASE_DIR)/include $(DIST_SMOKE_SRC) $(RELEASE_DIR)/lib/libLeoJSON.a \
 		$(FOUNDATION_FLAGS) \
 		-o $(BUILD_DIR)/leojson_dist_smoke_gcc42
+
+HEADERDOC ?= /Developer/usr/bin/headerdoc2html
+GATHERHEADERDOC ?= /Developer/usr/bin/gatherheaderdoc
+API_DOC_DIR = docs/api
+
+.PHONY: headerdoc clean-headerdoc
+
+headerdoc:
+	rm -rf $(API_DOC_DIR)
+	mkdir -p $(API_DOC_DIR)
+	$(HEADERDOC) -o $(API_DOC_DIR) sources/LeoJSON/LeoJSON.h
+	$(GATHERHEADERDOC) $(API_DOC_DIR)
+
+clean-headerdoc:
+	rm -rf $(API_DOC_DIR)
