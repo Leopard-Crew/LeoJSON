@@ -117,3 +117,36 @@ clean-lib:
 	rm -f $(BUILD_DIR)/libLeoJSON_gcc42.a
 	rm -f $(BUILD_DIR)/leojson_api_smoke_lib_gcc40
 	rm -f $(BUILD_DIR)/leojson_api_smoke_lib_gcc42
+
+VERSION ?= 0.6.0
+DIST_DIR = dist
+RELEASE_DIR = $(DIST_DIR)/LeoJSON-$(VERSION)
+RELEASE_OPTFLAGS ?= -O2 -fno-common
+
+DIST_SMOKE_SRC = examples/leojson_dist_smoke.m
+
+.PHONY: release release-gcc42 clean-dist dist-smoke-gcc42
+
+release: release-gcc42
+
+release-gcc42:
+	$(MAKE) clean-lib
+	$(MAKE) lib-gcc42 OPTFLAGS="$(RELEASE_OPTFLAGS)"
+	rm -rf $(RELEASE_DIR)
+	mkdir -p $(RELEASE_DIR)/include
+	mkdir -p $(RELEASE_DIR)/lib
+	mkdir -p $(RELEASE_DIR)/docs
+	cp sources/LeoJSON/LeoJSON.h $(RELEASE_DIR)/include/LeoJSON.h
+	cp $(BUILD_DIR)/libLeoJSON_gcc42.a $(RELEASE_DIR)/lib/libLeoJSON.a
+	cp README.md $(RELEASE_DIR)/README.md
+	cp docs/*.md $(RELEASE_DIR)/docs/
+
+clean-dist:
+	rm -rf $(RELEASE_DIR)
+
+dist-smoke-gcc42: release-gcc42
+	$(CC42) -ObjC -std=gnu99 -Wall -DNS_BLOCK_ASSERTIONS=1 \
+		-arch $(ARCH) -isysroot $(SDKROOT) -mmacosx-version-min=$(MACOSX_VERSION_MIN) \
+		-I$(RELEASE_DIR)/include $(DIST_SMOKE_SRC) $(RELEASE_DIR)/lib/libLeoJSON.a \
+		$(FOUNDATION_FLAGS) \
+		-o $(BUILD_DIR)/leojson_dist_smoke_gcc42

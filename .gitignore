@@ -4,3 +4,7 @@
 
 # macOS metadata
 .DS_Store
+
+# Release products
+/dist/*
+!/dist/.gitkeep
