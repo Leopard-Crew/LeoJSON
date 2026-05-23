@@ -36,7 +36,7 @@ baseline to release-candidate status.
 - [x] Dist smoke probe passes
 - [x] Error smoke probe passes
 - [x] JSONKit parser exceptions are contained by LeoJSON
-- [ ] Release-candidate full smoke target exists
+- [x] Release-candidate full smoke target exists
 
 ### Build and release layout
 

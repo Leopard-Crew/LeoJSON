@@ -174,3 +174,15 @@ ERROR_SMOKE_SRC = probes/leojson_error_smoke.m
 error-smoke-lib-gcc42: lib-gcc42
 	$(CC42) $(COMMON_FLAGS) $(OPTFLAGS) $(ERROR_SMOKE_SRC) $(BUILD_DIR)/libLeoJSON_gcc42.a $(FOUNDATION_FLAGS) \
 		-o $(BUILD_DIR)/leojson_error_smoke_lib_gcc42
+
+.PHONY: full-smoke-gcc42
+
+full-smoke-gcc42:
+	$(MAKE) clean-lib
+	$(MAKE) api-smoke-lib-gcc42 OPTFLAGS="$(RELEASE_OPTFLAGS)"
+	$(BUILD_DIR)/leojson_api_smoke_lib_gcc42
+	$(MAKE) error-smoke-lib-gcc42 OPTFLAGS="$(RELEASE_OPTFLAGS)"
+	$(BUILD_DIR)/leojson_error_smoke_lib_gcc42
+	$(MAKE) dist-smoke-gcc42
+	$(BUILD_DIR)/leojson_dist_smoke_gcc42
+	$(MAKE) headerdoc
