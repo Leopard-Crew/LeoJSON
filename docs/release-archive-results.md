@@ -10,8 +10,8 @@ headers, static library, README, and checksum file.
 ## Artifact pattern
 
 ```text
-dist/LeoJSON-<version>-leopard-ppc.tar.gz
-dist/LeoJSON-<version>-leopard-ppc.tar.gz.sha256
+dist/LeoJSON-<version>-Leopard-PPC.tar.gz
+dist/LeoJSON-<version>-Leopard-PPC.tar.gz.sha256
 ````
 
 ## Interpretation

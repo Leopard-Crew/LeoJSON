@@ -24,7 +24,7 @@ PowerPC hardware.
 ## Artifact
 
 ```text
-dist/LeoJSON-0.7.0-leopard-ppc.tar.gz
+dist/LeoJSON-0.7.0-Leopard-PPC.tar.gz
 ````
 
 ## SHA256

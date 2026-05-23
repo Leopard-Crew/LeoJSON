@@ -18,7 +18,7 @@ make verify-archive-gcc42
 ## Archive name
 
 ```text
-LeoJSON-<version>-leopard-ppc.tar.gz
+LeoJSON-<version>-Leopard-PPC.tar.gz
 ```
 
 ## Checksum
@@ -26,7 +26,7 @@ LeoJSON-<version>-leopard-ppc.tar.gz
 Each archive receives a SHA256 checksum file:
 
 ```text
-LeoJSON-<version>-leopard-ppc.tar.gz.sha256
+LeoJSON-<version>-Leopard-PPC.tar.gz.sha256
 ```
 
 ## Rule

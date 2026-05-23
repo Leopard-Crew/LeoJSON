@@ -192,13 +192,13 @@ full-smoke-gcc42:
 	$(BUILD_DIR)/leojson_dist_smoke_gcc42
 	$(MAKE) headerdoc
 
-RELEASE_ARCHIVE = $(DIST_DIR)/LeoJSON-$(VERSION)-leopard-ppc.tar.gz
+RELEASE_ARCHIVE = $(DIST_DIR)/LeoJSON-$(VERSION)-Leopard-PPC.tar.gz
 RELEASE_SHA256 = $(RELEASE_ARCHIVE).sha256
 
 .PHONY: archive-gcc42 verify-archive-gcc42 clean-archive
 
 archive-gcc42: release-gcc42
-	cd $(DIST_DIR) && tar -czf LeoJSON-$(VERSION)-leopard-ppc.tar.gz LeoJSON-$(VERSION)
+	cd $(DIST_DIR) && tar -czf LeoJSON-$(VERSION)-Leopard-PPC.tar.gz LeoJSON-$(VERSION)
 	openssl dgst -sha256 $(RELEASE_ARCHIVE) > $(RELEASE_SHA256)
 
 verify-archive-gcc42: archive-gcc42
