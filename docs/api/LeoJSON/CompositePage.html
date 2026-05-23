@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+<title>LeoJSON </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="HeaderDoc">
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style>
+</head>
+<body bgcolor="#ffffff">
+<a name="top"></a><a name="//apple_ref/doc/header/LeoJSON.h" title="LeoJSON "></a><hr>
+<table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h1><a name="LeoJSON">LeoJSON </a></h1>
+</td></tr></table>
+<hr>
+<p><!-- begin abstract -->Leopard-Crew JSON boundary for Mac OS X 10.5.8 PowerPC.
+<!-- end abstract --></p>
+<p></p>
+<h5 class="tight">
+<font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5>
+<p><!-- begin discussion -->LeoJSON provides the public JSON API boundary for Leopard-Crew projects.
+<br><br>
+JSONKit remains an internal parser and serializer engine. Application code
+should include LeoJSON.h and must not include JSONKit.h directly.
+<br><br>
+LeoJSON follows Cocoa naming and ownership conventions. Returned objects are
+autoreleased unless otherwise documented.
+ <!-- end discussion --></p>
+<p></p>
+<hr>
+<br><h2>Functions</h2>
+<a name="HeaderDoc_functions"></a><dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/c/func/LeoJSONDataFromObject" target="_top">LeoJSONDataFromObject </a></tt></dt>
+<dd>Serializes a Foundation object graph to compact UTF-8 JSON data.
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/c/func/LeoJSONObjectFromData" target="_top">LeoJSONObjectFromData </a></tt></dt>
+<dd>Parses UTF-8 JSON data into Foundation objects.
+</dd>
+</dl>
+<hr>
+<!-- headerDoc=func;  uid=//apple_ref/doc/compositePage/c/func/LeoJSONDataFromObject;  name=LeoJSONDataFromObject --><a name="//apple_ref/doc/compositePage/c/func/LeoJSONDataFromObject"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="LeoJSONDataFromObject">LeoJSONDataFromObject </a></h3>
+</td></tr></table>
+<hr>
+<p><!-- begin abstract -->Serializes a Foundation object graph to compact UTF-8 JSON data.
+<!-- end abstract --></p>
+<p></p>
+<pre><!-- a logicalPath="//apple_ref/c/cl/NSData //apple_ref/c/tdef/NSData //apple_ref/c/tag/NSData //apple_ref/c/econst/NSData //apple_ref/c/struct/NSData //apple_ref/c/clconst/NSData //apple_ref/c/intf/NSData" --><span class="type">NSData</span><!-- /a --> <span class="type">*</span><a href="../../api/LeoJSON/index.html?Functions/Functions.html#//apple_ref/c/func/LeoJSONDataFromObject" logicalPath="//apple_ref/c/instm/LeoJSONDataFromObject //apple_ref/c/clm/LeoJSONDataFromObject //apple_ref/c/intfcm/LeoJSONDataFromObject //apple_ref/c/intfm/LeoJSONDataFromObject //apple_ref/c/func/LeoJSONDataFromObject" target="_top"><span class="function">LeoJSONDataFromObject</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/id //apple_ref/c/tdef/id //apple_ref/c/tag/id //apple_ref/c/econst/id //apple_ref/c/struct/id //apple_ref/c/clconst/id //apple_ref/c/intf/id" --><span class="type">id</span><!-- /a --> <span class="param">object</span>, 
+    <a href="../../api/LeoJSON/index.html?DataTypes/DataTypes.html#//apple_ref/c/tdef/LeoJSONWriteOptions" logicalPath="//apple_ref/c/cl/LeoJSONWriteOptions //apple_ref/c/tdef/LeoJSONWriteOptions" target="_top"><span class="type">LeoJSONWriteOptions</span></a> <span class="param">options</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/NSString //apple_ref/c/tdef/NSString //apple_ref/c/tag/NSString //apple_ref/c/econst/NSString //apple_ref/c/struct/NSString //apple_ref/c/clconst/NSString //apple_ref/c/intf/NSString" --><span class="type">NSString</span><!-- /a --> *<span class="type">*</span><span class="param">errorString</span>);  </pre>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<dl>
+<dt><code>object </code></dt>
+<dd>The Foundation object graph to serialize. Must not be nil.</dd>
+<dt><code>options </code></dt>
+<dd>JSON write options. Currently only LeoJSONWriteCompact is
+supported.</dd>
+<dt><code>errorString </code></dt>
+<dd>Optional output pointer receiving an autoreleased diagnostic
+string on failure. May be NULL.</dd>
+</dl>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value -->Autoreleased JSON data, or nil on failure.
+
+<!-- end return value --></p>
+<h5 class="tight">
+<font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5>
+<p><!-- begin discussion -->The caller does not own the returned data. Retain or copy it if it must live
+beyond the current autorelease pool.
+<br><br>
+The supported Foundation object graph follows LeoJSON's current API contract
+and the vendored JSONKit engine behind the LeoJSON boundary.
+ <!-- end discussion --></p>
+<p></p>
+<hr>
+<!-- headerDoc=func;  uid=//apple_ref/doc/compositePage/c/func/LeoJSONObjectFromData;  name=LeoJSONObjectFromData --><a name="//apple_ref/doc/compositePage/c/func/LeoJSONObjectFromData"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="LeoJSONObjectFromData">LeoJSONObjectFromData </a></h3>
+</td></tr></table>
+<hr>
+<p><!-- begin abstract -->Parses UTF-8 JSON data into Foundation objects.
+<!-- end abstract --></p>
+<p></p>
+<pre><!-- a logicalPath="//apple_ref/c/cl/id //apple_ref/c/tdef/id //apple_ref/c/tag/id //apple_ref/c/econst/id //apple_ref/c/struct/id //apple_ref/c/clconst/id //apple_ref/c/intf/id" --><span class="type">id</span><!-- /a --> <a href="../../api/LeoJSON/index.html?Functions/Functions.html#//apple_ref/c/func/LeoJSONObjectFromData" logicalPath="//apple_ref/c/instm/LeoJSONObjectFromData //apple_ref/c/clm/LeoJSONObjectFromData //apple_ref/c/intfcm/LeoJSONObjectFromData //apple_ref/c/intfm/LeoJSONObjectFromData //apple_ref/c/func/LeoJSONObjectFromData" target="_top"><span class="function">LeoJSONObjectFromData</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/NSData //apple_ref/c/tdef/NSData //apple_ref/c/tag/NSData //apple_ref/c/econst/NSData //apple_ref/c/struct/NSData //apple_ref/c/clconst/NSData //apple_ref/c/intf/NSData" --><span class="type">NSData</span><!-- /a --> *<span class="param">data</span>, 
+    <a href="../../api/LeoJSON/index.html?DataTypes/DataTypes.html#//apple_ref/c/tdef/LeoJSONReadOptions" logicalPath="//apple_ref/c/cl/LeoJSONReadOptions //apple_ref/c/tdef/LeoJSONReadOptions" target="_top"><span class="type">LeoJSONReadOptions</span></a> <span class="param">options</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/NSString //apple_ref/c/tdef/NSString //apple_ref/c/tag/NSString //apple_ref/c/econst/NSString //apple_ref/c/struct/NSString //apple_ref/c/clconst/NSString //apple_ref/c/intf/NSString" --><span class="type">NSString</span><!-- /a --> *<span class="type">*</span><span class="param">errorString</span>);  </pre>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<dl>
+<dt><code>data </code></dt>
+<dd>The JSON data to parse. Must not be nil.</dd>
+<dt><code>options </code></dt>
+<dd>JSON read options. Currently only LeoJSONReadStrict is supported.</dd>
+<dt><code>errorString </code></dt>
+<dd>Optional output pointer receiving an autoreleased diagnostic
+string on failure. May be NULL.</dd>
+</dl>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value -->An autoreleased Foundation object graph, or nil on failure.
+
+<!-- end return value --></p>
+<h5 class="tight">
+<font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5>
+<p><!-- begin discussion -->The caller does not own the returned object. Retain or copy it if it must live
+beyond the current autorelease pool.
+<br><br>
+If parsing fails and errorString is not NULL, LeoJSON stores an autoreleased
+diagnostic string in *errorString. Diagnostic strings are intended for logging
+and developer feedback, not as stable machine-readable error codes.
+ <!-- end discussion --></p>
+<p></p>
+<h2>Typedefs</h2>
+<hr>
+<!-- headerDoc=tdef;  uid=//apple_ref/doc/compositePage/c/tdef/LeoJSONReadOptions;  name=LeoJSONReadOptions --><a name="//apple_ref/doc/compositePage/c/tdef/LeoJSONReadOptions"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="LeoJSONReadOptions">LeoJSONReadOptions </a></h3>
+</td></tr></table>
+<hr>
+<p><!-- begin abstract -->Options controlling JSON parsing.
+<!-- end abstract --></p>
+<p></p>
+<pre><span class="keyword">typedef</span> <span class="keyword">enum</span> { 
+    <a href="../../api/LeoJSON/index.html?DataTypes/DataTypes.html#//apple_ref/c/econst/LeoJSONReadStrict" logicalPath="//apple_ref/c/cl/LeoJSONReadStrict //apple_ref/c/tdef/LeoJSONReadStrict //apple_ref/c/tag/LeoJSONReadStrict //apple_ref/c/econst/LeoJSONReadStrict" target="_top"><span class="type">LeoJSONReadStrict</span></a> = <span class="number">0</span> 
+} <span class="var">LeoJSONReadOptions</span>;  </pre>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Constants</font></h5>
+<blockquote>
+<dl>
+<dt><code>LeoJSONReadStrict </code></dt>
+<dd>Strict JSON parsing. This is currently the only
+supported read option.</dd>
+</dl>
+</blockquote>
+<p></p>
+<hr>
+<!-- headerDoc=tdef;  uid=//apple_ref/doc/compositePage/c/tdef/LeoJSONWriteOptions;  name=LeoJSONWriteOptions --><a name="//apple_ref/doc/compositePage/c/tdef/LeoJSONWriteOptions"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="LeoJSONWriteOptions">LeoJSONWriteOptions </a></h3>
+</td></tr></table>
+<hr>
+<p><!-- begin abstract -->Options controlling JSON serialization.
+<!-- end abstract --></p>
+<p></p>
+<pre><span class="keyword">typedef</span> <span class="keyword">enum</span> { 
+    <a href="../../api/LeoJSON/index.html?DataTypes/DataTypes.html#//apple_ref/c/econst/LeoJSONWriteCompact" logicalPath="//apple_ref/c/cl/LeoJSONWriteCompact //apple_ref/c/tdef/LeoJSONWriteCompact //apple_ref/c/tag/LeoJSONWriteCompact //apple_ref/c/econst/LeoJSONWriteCompact" target="_top"><span class="type">LeoJSONWriteCompact</span></a> = <span class="number">0</span> 
+} <span class="var">LeoJSONWriteOptions</span>;  </pre>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Constants</font></h5>
+<blockquote>
+<dl>
+<dt><code>LeoJSONWriteCompact </code></dt>
+<dd>Compact JSON output. This is currently the only
+supported write option.</dd>
+</dl>
+</blockquote>
+<p></p>
+<p>Last Updated: Saturday, May 23, 2026
+</p>
+</body>
+</html>
